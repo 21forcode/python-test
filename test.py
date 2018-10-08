@@ -26,3 +26,11 @@ data.head()
  short_rolling = data.rolling(window=96).mean()
 short_rolling.head(20)
 
+
+def average():
+    ndays = 96
+    SMA = pd.Series((data1['Close']).rolling(window=ndays).mean(),name = 'SMA') 
+    df = pd.concat([data1,SMA], axis=1)
+    print(df)
+
+
